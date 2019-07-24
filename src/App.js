@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import logo from './logo.png';
 import './App.css';
 import Form, { UserForm } from './components/Form/UserForm';
+import './index.css';
 
 function App() {
-
 
   return (
     <div className="App">

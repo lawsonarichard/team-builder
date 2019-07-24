@@ -10,8 +10,13 @@ export class Confirm extends Component {
         this.props.nextStep();
     }
 
+    back = event => {
+        event.preventDefault();
+        this.props.prevStep();
+    };
+
     render() {
-        const { values: { firstName, lastName, gender} } = this.props;
+        const { values: { firstName, lastName, gender, pokemon } } = this.props;
         return (
             <MuiThemeProvider>
                 <React.Fragment>
@@ -29,14 +34,25 @@ export class Confirm extends Component {
                             primaryText="Gender"
                             secondaryText={ gender }
                         />
+                           <ListItem
+                            primaryText="Starter Pokemon"
+                            secondaryText={ pokemon }
+                        />
                     </List>
 
                 <br/>
                     <RaisedButton 
-                        label="Continue"
+                        label="Confirm & Contiune"
                         primary={true}
                         style={styles.button}
                         onClick={this.continue}
+                    />
+                 <br />
+                    <RaisedButton
+                        label="Back"
+                        primary={false}
+                        style={styles.button}
+                        onClick={this.back}
                     />
                 </React.Fragment>
             </MuiThemeProvider>

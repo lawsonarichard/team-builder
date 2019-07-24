@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import FormUserDetails from './FormUserDetails';
 import FormPokemonDetails from './FormPokemonTeam';
 import Confirm from './Confirm';
+import Success from './Success';
 export class UserForm extends Component {
+
 
   //Step 1 import first name, last name and gender
   state = {
@@ -10,6 +12,7 @@ export class UserForm extends Component {
     firstName: '',
     lastName: '',
     gender: '',
+    pokemon: '',
   }
 
   // Proceed to next Step
@@ -39,9 +42,10 @@ export class UserForm extends Component {
   render() {
 
     const { step } = this.state;
-    const { firstName, lastName, gender} = this.state;
-    const values = { firstName, lastName, gender}
-
+    const { firstName, lastName, gender, pokemon } = this.state;
+    const values = { firstName, lastName, gender, pokemon}
+  
+  
     switch(step) {
 
       case 1: 
@@ -72,8 +76,10 @@ export class UserForm extends Component {
           )    
 
       case 4:
-        return <h1>Success</h1>
-      
+        return  (
+          <Success />
+        
+        )
       }
     return (
       
