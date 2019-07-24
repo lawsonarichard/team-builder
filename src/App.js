@@ -11,7 +11,7 @@ function App() {
       
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" width="400px"/>
-
+          Pokemon Trainer Team Builder
       </header>
       <Form />
     </div>
